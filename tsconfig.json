@@ -9,7 +9,7 @@
     "sourceMap": true,
     "declaration": true,
     "strictNullChecks": false,
-    "baseUrl": "./src",
+    "rootDir": "./src",
     "outDir": "./dist",
     "lib": [
       "dom",

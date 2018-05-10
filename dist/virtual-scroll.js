@@ -2,16 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var tween = require("@tweenjs/tween.js");
-var VirtualScrollComponent = (function () {
+var VirtualScrollComponent = /** @class */ (function () {
     function VirtualScrollComponent(element, renderer, zone) {
         var _this = this;
         this.element = element;
         this.renderer = renderer;
         this.zone = zone;
-        this._items = [];
         this.bufferAmount = 0;
         this.scrollAnimationTime = 1500;
         this.doNotCheckAngularZone = false;
+        this._items = [];
         this.refreshHandler = function () {
             _this.refresh();
         };
@@ -253,7 +253,7 @@ var VirtualScrollComponent = (function () {
         if (start !== this.previousStart || end !== this.previousEnd || forceViewportUpdate === true) {
             this.zone.run(function () {
                 // update the scroll list
-                var _end = end >= 0 ? end : 0; // To prevent from accidentally selecting the entire array with a negative 1 (-1) in the end position. 
+                var _end = end >= 0 ? end : 0; // To prevent from accidentally selecting the entire array with a negative 1 (-1) in the end position.
                 _this.viewPortItems = items.slice(start, _end);
                 _this.update.emit(_this.viewPortItems);
                 // emit 'start' event
@@ -298,27 +298,27 @@ var VirtualScrollComponent = (function () {
         { type: core_1.NgZone, },
     ]; };
     VirtualScrollComponent.propDecorators = {
-        'items': [{ type: core_1.Input },],
-        'scrollbarWidth': [{ type: core_1.Input },],
-        'scrollbarHeight': [{ type: core_1.Input },],
-        'childWidth': [{ type: core_1.Input },],
-        'childHeight': [{ type: core_1.Input },],
-        'bufferAmount': [{ type: core_1.Input },],
-        'scrollAnimationTime': [{ type: core_1.Input },],
-        'doNotCheckAngularZone': [{ type: core_1.Input },],
-        'parentScroll': [{ type: core_1.Input },],
-        'update': [{ type: core_1.Output },],
-        'change': [{ type: core_1.Output },],
-        'start': [{ type: core_1.Output },],
-        'end': [{ type: core_1.Output },],
-        'contentElementRef': [{ type: core_1.ViewChild, args: ['content', { read: core_1.ElementRef },] },],
-        'shimElementRef': [{ type: core_1.ViewChild, args: ['shim', { read: core_1.ElementRef },] },],
-        'containerElementRef': [{ type: core_1.ContentChild, args: ['container',] },],
+        "scrollbarWidth": [{ type: core_1.Input },],
+        "scrollbarHeight": [{ type: core_1.Input },],
+        "childWidth": [{ type: core_1.Input },],
+        "childHeight": [{ type: core_1.Input },],
+        "bufferAmount": [{ type: core_1.Input },],
+        "scrollAnimationTime": [{ type: core_1.Input },],
+        "doNotCheckAngularZone": [{ type: core_1.Input },],
+        "items": [{ type: core_1.Input },],
+        "parentScroll": [{ type: core_1.Input },],
+        "update": [{ type: core_1.Output },],
+        "change": [{ type: core_1.Output },],
+        "start": [{ type: core_1.Output },],
+        "end": [{ type: core_1.Output },],
+        "contentElementRef": [{ type: core_1.ViewChild, args: ['content', { read: core_1.ElementRef },] },],
+        "shimElementRef": [{ type: core_1.ViewChild, args: ['shim', { read: core_1.ElementRef },] },],
+        "containerElementRef": [{ type: core_1.ContentChild, args: ['container',] },],
     };
     return VirtualScrollComponent;
 }());
 exports.VirtualScrollComponent = VirtualScrollComponent;
-var VirtualScrollModule = (function () {
+var VirtualScrollModule = /** @class */ (function () {
     function VirtualScrollModule() {
     }
     VirtualScrollModule.decorators = [
@@ -327,8 +327,6 @@ var VirtualScrollModule = (function () {
                     declarations: [VirtualScrollComponent]
                 },] },
     ];
-    /** @nocollapse */
-    VirtualScrollModule.ctorParameters = function () { return []; };
     return VirtualScrollModule;
 }());
 exports.VirtualScrollModule = VirtualScrollModule;
